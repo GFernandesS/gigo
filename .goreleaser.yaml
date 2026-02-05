@@ -1,0 +1,16 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+archives:
+  - format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
